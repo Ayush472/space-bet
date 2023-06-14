@@ -1,0 +1,326 @@
+.navbar-brand {
+    padding-left: 2rem;
+    padding-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .navbar-brand img{
+    height: 3rem;
+  }
+  .navbar {
+    height: 10vh;
+    background: url("./../images/2.png"), #232c35;
+    justify-content: space-between !important;
+    padding: 1rem 0rem;
+  }
+  .nav-item {
+    align-items: center !important;
+  }
+  
+  .flex-icons {
+    color: var(--white) !important;
+  }
+  ul a.nav-link {
+    padding: 0px;
+  }
+  .navbar-nav .nav-link {
+    color: var(--white);
+    padding-left: 0rem !important;
+    padding-top: 1.5rem;
+  }
+  .nav-link {
+    color: var(--black);
+    font-weight: 500;
+  }
+  .nav-link:hover {
+    color: var(--greenYellow) !important;
+  }
+  
+  .navbar-nav a {
+    font-size: 14px;
+    padding-left: 5rem;
+    font-weight: 600;
+  }
+  
+  .login-btn-btn{
+    color: var(--greenYellow) !important;
+    background-color: #232c3500 !important;
+    margin-right: 10px;
+    font-size: 18px !important;
+  }
+  .sign-btn {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    border: 0px solid var(--greenYellow);
+    background-color: #232c3500 !important;
+    color: var(--greenYellow) !important;
+    margin-right: 1.5rem;
+    margin-left: 0.5rem;
+    font-size: 18px !important;
+  }
+  
+  .sign-btn:hover {
+    background-color: rgb(51, 49, 49);
+  }
+  .popup-css {
+    background-color: var(--primary);
+    border: 0px;
+  }
+  .popup-content {
+    background: #0000 !important;
+    padding: 5px;
+    border: 0px !important;
+  }
+  .popup-overlay{
+    background: rgb(0 0 0 / 83%);
+  
+  }
+  
+  /* Login page code css  */
+  .login-popup-dash div h6{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .login-popup-dash div input{
+    height: 2.5rem;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #232c35;
+  }
+  .login-popup-dash div input:focus{
+    background-color: #232c35;
+  }
+  .logbox{
+    background-color: var(--primary);
+    border-radius: 1rem;
+    width: 26rem;
+    height: 35rem;
+    padding: 2rem 3.5rem;
+    
+  }
+  .logbox h4{
+    color: var(--greenYellow);
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+  }
+  .login-btn{
+    width: 35%;
+    height: 3rem;
+    background-color: var(--greenYellow);
+    border: 2px solid var(--greenYellow);
+    border-radius: 2.5rem;
+    margin-top: 15px;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .forgot-btn-dash{
+    width: 65%;
+    height: 3rem;
+    background-color: var(--greenYellow);
+    border: 2px solid var(--greenYellow);
+    border-radius: 2.5rem;
+    margin-top: 15px;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .login-btn:hover {
+    background-color: var(--primary);
+    color: var(--greenYellow);
+  }
+  .para{
+    color: gray;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .flex-button{
+    display: flex;
+    flex-direction: row;
+  }
+  .icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .icons a{
+    color: gray;
+  }
+  .icons a:hover{
+    color: var(--greenYellow);
+  }
+  .nav-link span{
+    margin-left: 0px;
+  }
+  
+  /* side Navbar */
+  
+  .side-nav-continer{
+    /* background-color: "#232c35"; */
+    max-height:"100vh";
+    background: url("./../images/2.png"), #232c35;
+    
+    background-repeat: repeat;
+    /* background-position: right top; */
+  }
+
+
+  /* signup code */
+
+
+ 
+  .form-control {
+    /* background-color: #303b47; */
+    background-color: var(--primary);
+    /* padding: 0px 5px; */
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    margin: 0px 0px !important;
+  }
+  .form-group {
+    padding-bottom: 1px !important;
+    padding-top: 1px !important;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .form-check-input {
+    position: relative !important;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    height: 1rem;
+    width: 1rem;
+  }
+  .form-check-label {
+    color: gray;
+  }
+  .text-decoration-none {
+    padding-left: 4px;
+  }
+  .sign {
+    width: 100%;
+    background-color: var(--greenYellow);
+    border: 2px solid var(--greenYellow);
+    border-radius: 2.5rem;
+    padding: 6px 0px;
+    margin-top: 15px;
+    font-size: 18px;
+    color: var(--black);
+    font-weight: 600;
+  }
+  .sign:hover {
+    /* background-color: #303b47; */
+    background-color: var(--primary);
+  
+    color: var(--greenYellow);
+  }
+  .pt-2 {
+    color: gray;
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .icons a {
+    color: gray;
+  }
+  .icons a:hover {
+    color: var(--greenYellow);
+  }
+  input[type] {
+    color: var(--greenYellow);
+  }
+  input[type]:focus {
+    /* background-color: #303b47; */
+    background-color: var(--primary);
+    color: var(--greenYellow);
+  }
+  .signup-box div div h6{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+   color: #7d7d7e;
+  }
+  .pop-signup div div input{
+    height: 2.5rem;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #232c35 !important;
+  }
+  .pop-signup div div input:focus{
+    background-color: #232c35;
+  }
+  .sign-termsC input{
+  height:  18px !important;
+  width: 18px;
+  }
+  .sign-termsC span{
+    font-size: 16px;
+    font-weight: 600;
+   color: #7d7d7e;
+   line-height: 1 !important;
+   margin-left: 0.5rem;
+  }
+  .sign-termsC a{
+  font-weight: 700;
+  color: #7d7d7e;
+  text-decoration: underline !important;
+  font-size: 16px;
+  line-height: 1;
+  }
+  .sign-termsC a:hover{
+    color: white !important;
+  }
+  .form-check{
+    padding-left: 0px !important;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+}
+
+
+
+/* login and singup button  */
+
+
+/* .login-title{
+    position: absolute;
+    padding-left: 14rem;
+    top: 37px;
+    margin-right: -74rem
+} */
+
+.title{
+  width: 50%;
+  float: left;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.login{
+  padding-top: 2rem;
+}
+
+
+
+.regiseter{
+  position: absolute;
+  right: 22.5rem;
+  /* left: -321px; */
+  top: -24px
+}
+.logw {
+  position: absolute;
+  right: 22rem;
+  /* left: -321px; */
+  top: -24px;}
+
+  .active.nav-item {
+    background-color: #abff2e;
+}
+
+  .nav-tabs .nav-link{
+    border: 0px !important;
+  }

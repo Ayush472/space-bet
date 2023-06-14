@@ -1,0 +1,11 @@
+.computer {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(32, 32, 34);
+    bottom: 0;
+    left: 0;
+    transition: bottom 4s, left 4s;
+}
+    

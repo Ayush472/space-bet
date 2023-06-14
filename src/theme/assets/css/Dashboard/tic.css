@@ -1,0 +1,279 @@
+
+.gamemain {
+  background-color: #131a28;
+  color: #1cdbf5;
+}
+#plu{
+    text-decoration: none ;
+}
+.gamepage {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #131a28;
+  /* pointer-events: none; */
+}
+#game_portion {
+  pointer-events: none;
+}
+.game-board {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* background-color: #131a28; */
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+.tic-tac-toe-btn1 {
+  min-width: 145px;
+  min-height: 145px;
+  font-size: 70px;
+  text-align: center;
+  color: #1cdbf5;
+  background-color: #131a28;
+  font-weight: bolder;
+  padding: 0px;
+}
+
+.game-board .rows {
+  display: flex;
+  flex-direction: row;
+}
+
+.b-bottom-right {
+  border-left: none;
+  border-top: none;
+
+  border-right: 15px solid #1cdbf5;
+  border-bottom: 15px solid #1cdbf5;
+}
+
+.b-bottom {
+  border-right: none;
+  border-top: none;
+  border-left: none;
+
+  border-bottom: 15px solid #1cdbf5;
+}
+
+.b-right {
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+  border-right: 15px solid #1cdbf5;
+}
+
+.clear-button {
+  width: max-content;
+  margin: 40px auto 10px auto;
+}
+.game {
+  display: flex;
+  flex-wrap: wrap;
+}
+.game-info{
+    font-size: 25px;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem 5rem 0rem 3rem;
+}
+.last {
+  border: none;
+}
+.symbolX {
+  font-size: 45px;
+  cursor: pointer;
+  display: flex;
+
+  height: 4rem;
+  width: 4rem;
+}
+.symbolO {
+  font-size: 45px;
+  cursor: pointer;
+  display: flex;
+
+  height: 4rem;
+  width: 4rem;
+}
+.deits{
+    margin: 10px;
+}
+
+.p1 {
+  font-size: 25px;
+  margin-top: 10px;
+}
+.p2 {
+  font-size: 25px;
+  margin-top: 10px;
+}
+.details {
+  font-size: 18px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0px 4px 6px 4px;
+}
+.details input {
+  width: 9rem;
+  height: 2rem;
+  margin-left: 10px;
+  background-color: #627db4;
+  color: #1cdbf5 !important;
+}
+.details input:focus {
+  background-color: #627db4 !important;
+  outline: 0px;
+}
+.details button {
+  width: 3rem;
+  height: 2rem;
+  font-size: 15px;
+}
+
+
+
+.start {
+    padding: 10px 10px !important;
+    box-shadow: 2px 2px 3px #000;
+    border-radius: 4px;
+  /* width: 6rem !important;
+  height: 2rem; */
+  font-size: 15px;
+  margin-top: 5px;
+  display: inline-block;
+  outline: 0;
+  border:0;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  background: #fff;
+  font-weight: 600;
+  padding: 4px;
+
+
+  
+}
+
+.restart {
+    padding: 10px 10px !important;
+    box-shadow: 2px 2px 3px #000;
+    border-radius: 4px;
+  /* width: 6rem !important;
+  height: 2rem; */
+  font-size: 15px;
+  margin-top: 5px;
+  display: inline-block;
+  outline: 0;
+  border:0;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  background: #fff;
+  font-weight: 600;
+  padding: 4px;
+
+}
+
+.clear {
+    padding: 10px 10px !important;
+    box-shadow: 2px 2px 3px #000;
+    border-radius: 4px;
+  /* width: 6rem !important;
+  height: 2rem; */
+  font-size: 15px;
+  margin-top: 5px;
+  display: inline-block;
+  outline: 0;
+  border:0;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  background: #fff;
+  font-weight: 600;
+  padding: 4px;
+
+}
+
+.socreside {
+  background-color: #1cdbf5;
+}
+
+.details {
+  background-color: #131a28;
+  color: white;
+}
+.tablehistory{
+    margin: 4rem 2rem 0 2rem;
+  background-color: #131a28;
+    
+
+}
+.tablehistory table {
+  color: #1cdbf5 ;
+}
+
+.spl2 {
+  padding: 3px;
+  color: #1cdbf5;
+}
+
+.sele {
+  font-size: 20px;
+  /* padding: 1px; */
+  margin: 4px;
+}
+.plname1{
+    color: #1cdbf5 ;
+
+}
+.plname2{
+    color: #1cdbf5 ;
+
+}
+#xturn{
+    justify-content: center;
+    text-align: center;
+    color: red;
+}
+#Oturn{
+    justify-content: center;
+    text-align: center;
+    color: red;
+}
+.pal-1{
+ margin: 0 2rem 0 0 ;
+}
+.sideturn{
+padding: 20 10;
+vertical-align: middle;
+}
+
+.w1{
+  display: none;
+}
+.w2{
+  display: none;
+}.w3{
+  display: none;
+}.w4{
+  display: none;
+}.w5{
+  display: none;
+}.w6{
+  display: none;
+}.w7{
+  display: none;
+}.w8{
+  display: none;
+}

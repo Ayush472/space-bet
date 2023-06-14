@@ -1,0 +1,122 @@
+/* .signup-box {
+    background-color: var(--primary);
+    border-radius: 1rem;
+    padding: 1rem 2rem 0rem 2rem;
+    height: 35rem;
+    width: 25rem;
+  }
+  .signup-box h4 {
+    color: var(--greenYellow);
+    text-shadow: 3px 3px var(--black);
+    padding-bottom: 1rem;
+      font-size: 2.5rem;
+  } */
+  .form-control {
+    /* background-color: #303b47; */
+    background-color: var(--primary);
+    /* padding: 0px 5px; */
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    margin: 0px 0px !important;
+  }
+  .form-group {
+    padding-bottom: 1px !important;
+    padding-top: 1px !important;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .form-check-input {
+    position: relative !important;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    height: 1rem;
+    width: 1rem;
+  }
+  .form-check-label {
+    color: gray;
+  }
+  .text-decoration-none {
+    padding-left: 4px;
+  }
+  .sign {
+    width: 100%;
+    background-color: var(--greenYellow);
+    border: 2px solid var(--greenYellow);
+    border-radius: 2.5rem;
+    padding: 6px 0px;
+    margin-top: 15px;
+    font-size: 18px;
+    color: var(--black);
+    font-weight: 600;
+  }
+  .sign:hover {
+    /* background-color: #303b47; */
+    background-color: var(--primary);
+  
+    color: var(--greenYellow);
+  }
+  .pt-2 {
+    color: gray;
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .icons a {
+    color: gray;
+  }
+  .icons a:hover {
+    color: var(--greenYellow);
+  }
+  input[type] {
+    color: var(--greenYellow);
+  }
+  input[type]:focus {
+    /* background-color: #303b47; */
+    background-color: var(--primary);
+    color: var(--greenYellow);
+  }
+  .signup-box div div h6{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+   color: #7d7d7e;
+  }
+  .signup-box div div input{
+    height: 2.5rem;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #232c35 !important;
+  }
+  .signup-box div div input:focus{
+    background-color: #232c35;
+  }
+  .sign-termsC input{
+  height:  18px !important;
+  width: 18px;
+  }
+  .sign-termsC span{
+    font-size: 16px;
+    font-weight: 600;
+   color: #7d7d7e;
+   line-height: 1 !important;
+   margin-left: 0.5rem;
+  }
+  .sign-termsC a{
+  font-weight: 700;
+  color: #7d7d7e;
+  text-decoration: underline !important;
+  font-size: 16px;
+  line-height: 1;
+  }
+  .sign-termsC a:hover{
+    color: white !important;
+  }
+  .form-check{
+    padding-left: 0px !important;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,61 @@
+import "./../../../../assets/css/Dashboard/rps game/index.css";
+import Header from "./header.js";
+import Hands from "./hand.js";
+import SideNavbar from "../../../SideNavbar";
+import Navbar from "../../NavBar";
+import Paper from "./../../../../assets/images/Game Image/rps game/Paper.png";
+import Scissors from "./../../../../assets/images/Game Image/rps game/Scissors.png";
+import Rock from "./../../../../assets/images/Game Image/rps game/Rock.png";
+import "./main";
+function Rps() {
+  const pvscom = () => {
+    document.getElementById("wrapper").style.display = "block";
+    document.getElementById("rocpepsic").style.display = "none";
+    document.getElementById("twobtnw").style.visibility = "hidden";
+
+
+  };
+  return (
+    <>
+      <Navbar />
+      <div className="row" style={{ overflow: "hidden" }}>
+        <div className="col-lg-1 ">
+          <SideNavbar />
+        </div>
+        <div className="col-lg-11">
+          <div className="rps">
+            <div className="player">
+              <div className="computer"><div className="twobtnw" id="twobtnw">
+
+                <button    className="pvc"  onClick={() => pvscom()}>Player Vs Computer</button>
+                <button className="pvc1" role="button">Player Vs Player</button>
+              </div>
+             
+              </div>
+              <div className="ptop"></div>
+            </div>
+            <div className="rocpepsic" id="rocpepsic">
+                  <div className="hands">
+                    <div className="hand paper">
+                      <img src={Paper} alt="paper-hand" />
+                    </div>
+                    <div className="hand scissors">
+                      <img src={Scissors} alt="scissors-hand" />
+                    </div>
+                    <div className="hand rock">
+                      <img src={Rock} alt="rock-hand" />
+                    </div>
+                  </div>
+                </div>
+            <div className="wrapper" id="wrapper">
+              <Header />
+              <Hands />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Rps;
