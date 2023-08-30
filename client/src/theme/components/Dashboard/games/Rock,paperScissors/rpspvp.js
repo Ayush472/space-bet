@@ -16,13 +16,12 @@ const Pvsp = () => {
   const [winner, setWinner] = useState(false);
   const [room, setRoom] = useState("");
   const [color, setColor] = useState(undefined);
-  const [gameStatus, setGameStatus] = useState(false)
+  const [gameStatus, setGameStatus] = useState(false);
 
-
+  const port = "https://space-bet.onrender.com/";
 
   useEffect(() => {
-    
-    console.log("=player",players)
+    console.log("=player", players);
     socket.on("players", (playerData, room) => {
       setPlayers(playerData);
       setRoom(room);
@@ -35,8 +34,8 @@ const Pvsp = () => {
         setTimeout(() => {
           setWinner(false);
           socket.emit("rps-reset");
-        }, 3000);
-      }, 3000);
+        }, port);
+      }, port);
     });
   }, []);
 
@@ -55,8 +54,8 @@ const Pvsp = () => {
   }, []);
 
   const cgCallBack = (isGameCreated) => {
-    setGameStatus(isGameCreated)
-  }
+    setGameStatus(isGameCreated);
+  };
 
   return (
     <>
