@@ -13,7 +13,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: " http://192.168.1.22:3000",
+    origin: "https://space-bet.onrender.com",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
     credentials: true,
@@ -167,6 +167,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
+server.listen("https://space-bet-backend.onrender.com", () => {
   console.log("SERVER IS RUNNING");
 });
