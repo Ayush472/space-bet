@@ -9,6 +9,7 @@ const computeWinner = require("./game.js");
 const cors = require("cors");
 
 app.use(cors());
+const port = process.env.PORT || 3001;
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -167,6 +168,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen("https://space-bet-backend.onrender.com", () => {
+server.listen(port, () => {
   console.log("SERVER IS RUNNING");
 });
