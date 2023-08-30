@@ -1,0 +1,72 @@
+/* .snake {
+    position: absolute;
+    background-color: #FF0000;
+    } */
+
+    .snake img {
+        position: absolute;
+        height: 100px;
+        transform: rotateZ(356deg);
+        left: 312px;
+        bottom: 0px;
+      }
+      .snake1 img {
+        position: absolute;
+        height: 155px;
+        left: 3rem;
+        transform: rotateZ(11deg);
+        bottom: 95px;
+      
+      }
+      
+      .snake2 img{
+        position: absolute;
+        height: 227px;
+        left: 255px;
+        /* top: 23rem; */
+        bottom: 20px;
+        transform: rotateZ(24deg);
+      }
+      
+      .snake3 img{
+          position: absolute;
+          height: 16rem;
+          top: 7rem;
+          transform: rotateZ(293deg);
+          left: 10rem;
+      }
+      .snake4 img{
+        position: absolute;
+        height: 176px;
+        left: 0px;
+        top: 34px;
+        /* width: 430px; */
+        transform: rotateZ(200deg);
+      }
+      
+      .snake5 img {
+        left: 120px;
+        position: absolute;
+        height: 471px;
+        transform: rotateZ(343deg);
+        /* top: -25px; */
+        bottom: 181px;
+        
+      }
+      
+      .snake6 img{
+        position: absolute;
+        height: 238px;
+        top: 68px;
+        left: 40px;
+        transform: rotateZ(12deg);
+      
+      }
+      
+      .snake7 img{
+        position: absolute;
+        height: 117px;
+        bottom: 235px;
+        left: 20px;
+        transform: rotateZ(47deg);
+      }

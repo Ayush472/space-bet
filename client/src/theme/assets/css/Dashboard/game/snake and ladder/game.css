@@ -1,0 +1,28 @@
+.snake-ladder{
+    background-color: #131a28;
+  color: #1cdbf5;
+}
+.snake-start-page{
+    background-color: #1cdbf5;
+    color: #131a28;
+}
+
+.snake-ladder-Roll-Dice{
+    margin: 25px 0 0px 10px;
+}
+
+.snake-ladder-Roll-Dice button{
+    border-radius: 28px;
+    border: 4px solid #de415d;
+    font-size: 24px;
+    /* display: flex; */
+    width: 138px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.game-asset-img img {
+    opacity: 0.5;
+}

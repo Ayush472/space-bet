@@ -1,0 +1,18 @@
+
+
+
+:root {
+    --primary: #303b47;
+    --primarylight: #434f68;
+  
+    --white: #ffffff;
+    --black: #000000;
+    --greenYellow: #abff2e;
+
+  }
+  body{
+    overflow: hidden;
+
+    position: relative;
+  }
+

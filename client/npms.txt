@@ -1,0 +1,14 @@
+npm i react-bootstrap
+npm install react-bootstrap bootstrap
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/free-regular-svg-icons
+npm i react-icons
+npm i react-toastify
+npm i react-items-carousel
+https://github.com/REAZN/rock-paper-scissors
+
+npm install clipboard
+npm install react-dice-roll
+ 372265877389
+ EHWpp3614J done

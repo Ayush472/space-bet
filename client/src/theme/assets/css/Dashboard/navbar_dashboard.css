@@ -1,0 +1,10 @@
+html, body {
+    max-width: 100%;
+    /* overflow-x: hidden; */
+}
+.navbar{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between !important;
+    width: 100% !important;
+}

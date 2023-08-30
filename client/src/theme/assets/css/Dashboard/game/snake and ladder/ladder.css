@@ -1,0 +1,52 @@
+.ladder1 img {
+  position: absolute;
+  height: 190px;
+  left: -11px;
+  top: -3px;
+  transform: rotateZ(45deg);
+  width: 212px;
+}
+
+.ladder2 img {
+  position: absolute;
+  /* top: 10px; */
+  height: 221px;
+  bottom: 38px;
+  right: -17px;
+  transform: rotateZ(41deg);
+}
+
+.ladder3 img{
+    position: absolute;
+    height: 212px;
+    transform: rotateZ(9deg);
+    top: 82px;
+    /* width: 298px; */
+    right: 25px;
+}
+.ladder4 img{
+  position: absolute;
+  height: 175px;
+  transform: rotateZ(274deg);
+  bottom: 54px;
+  left: 153px;
+}
+
+.ladder5 img{
+  position: absolute;
+  transform: rotateZ(317deg);
+  height: 182px;
+  bottom: 43xp;
+  right: -102px;
+  top: 33px;
+}
+
+
+.ladder6 img{
+  position: absolute;
+    right: 276px;
+    height: 191px;
+    bottom: 244px;
+    width: 112px;
+    transform: rotateZ(315deg);
+}

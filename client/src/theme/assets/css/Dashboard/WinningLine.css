@@ -1,0 +1,72 @@
+.winning-line {
+    position: absolute;
+    background-color: #ff6961;
+    height: 10px;
+    border-radius: 5px;
+    }
+    
+    .winning-line::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #ff6961;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    }
+    
+    .winning-line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #ff6961;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    }
+    
+    .winning-line[style*='top']::before,
+    .winning-line[style*='bottom']::after {
+    top: 0;
+    transform: translateX(-50%);
+    }
+    
+    .winning-line[style*='left']::before,
+    .winning-line[style*='right']::after {
+    left: 0;
+    transform: translateY(-50%);
+    }
+    
+    .winning-line[style*='top'] {
+    top: 0;
+    }
+    
+    .winning-line[style*='bottom'] {
+    bottom: 0;
+    }
+    
+    .winning-line[style*='left'] {
+    left: 0;
+    }
+    
+    .winning-line[style*='right'] {
+    right: 0;
+    }
+    
+    .winning-line[style*='width'] {
+    height: 10px;
+    }
+    
+    .winning-line[style*='height'] {
+    width: 10px;
+    }
+    
+    .winning-line[style*='rotate(45deg)'] {
+    transform: rotate(45deg);
+    }
+    
+    .winning-line[style*='rotate(-45deg)'] {
+    transform: rotate(-45deg);
+    }
+    
+    

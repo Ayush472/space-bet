@@ -1,0 +1,558 @@
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, NavLink } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import regi from "./../assets/images/register-modal.png";
+import logw from "./../assets/images/login-modal.png";
+import Forgotpage from "./Forgotpage";
+import { ToastContainer, toast } from "react-toastify";
+import logo from "./../assets/images/fulllogo.png";
+import "./../assets/css/navbar.css";
+import Popup from "reactjs-popup";
+import Signup from "./../components/Signup";
+import { useDispatch, useSelector } from "react-redux";
+import * as ServiceURL from "./../Redux/services/serviceUrl";
+import {
+  LOGIN_FAIL,
+  USER_DETAILS,
+  SIGNUP_FAIL,
+  USER_SIGNUP,
+} from "../Redux/action/type";
+function NavBar(props) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const userData = useSelector((state) => state.user);
+  useEffect(() => {
+    console.log("useEffect", userData);
+  }, []);
+
+  const [login, setLogin] = useState(false);
+  const closeLogin = () => setLogin(false);
+
+  const [signup, setSignup] = useState(false);
+  const closeSignup = () => setSignup(false);
+
+  const [forgot, setForgot] = useState(false);
+  const closeforgot = () => setForgot(false);
+  const [user, setUser] = useState({
+    login_email_id: "",
+    login_password: "",
+  });
+  const [user1, setUser1] = useState({
+    full_name: "",
+    email_id: "",
+    password: "",
+    confirm_password: "",
+  });
+  const emailValidation =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  const passValidation =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,9}$/;
+
+  
+
+  const handleUserLogin = () => {
+    ServiceURL.userDetails(user.login_email_id, user.login_password)
+      .then((response) => {
+        console.log("data", response);
+        dispatch({
+          type: USER_DETAILS,
+          payload: response,
+        });
+        toast.success("You are successfully login");
+        setTimeout(() => {
+          navigate("/home");
+        }, 1500);
+      })
+      .catch((error) => {
+        toast.error("Please Enter valid email or password");
+        dispatch({
+          type: LOGIN_FAIL,
+          payload: "Something went wrong, please try again later",
+        });
+        console.log("error call ", userData);
+      });
+  };
+
+  const handleUserSignUp = () => {
+    ServiceURL.userSignUp(
+      user1.full_name,
+      user1.email_id,
+      user1.password,
+      user1.confirm_password
+    )
+      .then((response) => {
+        console.log("response", response.status);
+
+        dispatch({
+          type: USER_SIGNUP,
+          payload: response,
+        });
+        toast.success("Register Successfully, Please Login Again");
+        setTimeout(() => {
+          {
+            props.onSuccess();
+          }
+        }, 3500);
+      })
+      .catch((error) => {
+        dispatch({
+          type: SIGNUP_FAIL,
+          payload: "Sign Up fail, please try again",
+        });
+      });
+  };
+  const check = () => {
+    if (user.login_email_id === "" || user.login_password === "") {
+      toast.error("Please Fill all fields");
+    } else if (!emailValidation.test(user.login_email_id) === true) {
+      toast.error("Please Enter Valid Email");
+    } else if (!passValidation.test(user.login_password) === true) {
+      toast.error("Please Enter Correct Password");
+    } else {
+      handleUserLogin();
+    }
+  };
+  const check1 = () => {
+    if (
+      user1.full_name === "" ||
+      user1.email_id === "" ||
+      user1.password === "" ||
+      user1.confirm_password === ""
+    ) {
+      toast.warn("Please fill all fields");
+    } else if (!emailValidation.test(user1.email_id)) {
+      toast.error("Please Enter Valid Email");
+    } else if (!passValidation.test(user1.password)) {
+      toast.warn("Please Enter Valid Password");
+    } else if (user1.password !== user1.confirm_password) {
+      toast.error("Please Enter Same Password");
+    } else if (document.getElementById("accept").checked == false) {
+      toast.warn("Please accept Terms & Conditions");
+    } else {
+      // setTimeout(() => {
+      //   setErrorMessage({ ...checkError, error: false });
+      // }, 2000);
+      // setTimeout(() => {
+      //   setSuccessMessage({ ...checkSuccess, success: false });
+      // }, 2000);
+      handleUserSignUp();
+    }
+  };
+  const [PopupType, setPopupType] = useState("xyz");
+
+  const [isLogin, setIsLogin] = useState(false);
+  useEffect(() => {
+    //     // if(document.getElementById('logout').style.display === 'block'){
+    //     //   document.getElementById('login').style.display = 'none';
+    //     //   document.getElementById('signUp').style.display = 'none';
+    //     // }else if(document.getElementById('logout').style.display === 'none'){
+    //     //   document.getElementById('login').style.display = 'block';
+    //     //   document.getElementById('signUp').style.display = 'block';
+    //     // }
+    console.log("useeffect", isLogin);
+  }, [isLogin]);
+  const [chaekLogin, setchaekLogin] = useState(false);
+  // let loginStatus = localStorage.getItem();
+  // const [user, setUser] = useState({ email: "", password: "" });
+  // const [login, setLogin] = useState(false);
+  // const closeLogin = () => setLogin(false);
+  // const [signup, setSignup] = useState(false);
+  // const closeSignup = () => setSignup(false);
+  const [up, setUp] = useState(false);
+  const closeUp = () => setUp(false);
+
+  // const handleSignUpPopUp = () => {
+  //   setSignup(true);
+  // };
+  const showSignUpPopUp = () => {
+    setSignup(!signup);
+    setLogin(!login);
+  };
+  const showUPPopUp = () => {
+    setUp(!up);
+    setPopupType("xyz");
+  };
+  const showUSignUpPPopUp = () => {
+    setUp(!up);
+    setPopupType("abc");
+  };
+
+  const handleNavbar = () => {
+    console.log(isLogin);
+    localStorage.setItem("user", JSON.stringify(user));
+    navigate("/home");
+    setTimeout(() => {
+      setLogin(false);
+    }, 1500);
+    if (data) {
+      setIsLogin(!isLogin);
+      console.log(isLogin);
+    }
+  };
+  let data = localStorage.getItem("user");
+
+  const handleLogout = () => {
+    fetch("http://192.168.1.7:4499/logout", {
+      method: "get",
+    })
+      .then(
+        localStorage.removeItem("userData"),
+        localStorage.removeItem("Register")
+      )
+      .then(navigate("/"));   setTimeout(() => {
+        setLogin(false);
+      }, 1500);
+      if (data) {
+        setIsLogin(!isLogin);
+        console.log(isLogin);
+      }
+  };
+
+  return (
+    <>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+
+      <nav className="navbar navbar-expand-lg  navbar-expand-md  navbar-expand-sm navbar-light">
+        <Link className="navbar-brand">
+          <img src={logo} alt="Crashgame Logo" />
+        </Link>
+
+        {/* for Popups  */}
+        {/* Login Popup  */}
+        <div className="d-flex flex-row">
+          {/* {isLogin === true ? (
+            <button
+            type="button"
+            id="logout"
+            // style={{ display: "none" }}
+            className="nav-link nav-item sign-btn"
+            onClick={() => handleLogout()}
+          >
+            Logout
+          </button>
+          ) : (
+          
+              <>
+              <button
+                type="button"
+                id="login"
+                className="nav-item nav-link popup-css login-btn-btn"
+                onClick={() => setLogin(!login)}
+              >
+                Login
+              </button>
+              <button
+                id="signUp"
+                type="button"
+                className="nav-link nav-item sign-btn"
+                onClick={() => handleSignUpPopUp()}
+              >
+                Sign-Up
+              </button>
+            </>
+          )} */}
+          {isLogin === false && userData ? (
+            <button
+              type="button"
+              id="logout"
+              // style={{ display: "none" }}
+              className="nav-link nav-item sign-btn"
+              onClick={() => handleLogout()}
+            >
+              Logout
+            </button>
+          ) : (
+            <>
+              {/* <button
+                type="button"
+                id="login"
+                className="nav-item nav-link popup-css login-btn-btn"
+                onClick={() => setLogin(!login)}
+              >
+                Login
+              </button> */}
+              {/* <button
+                id="login"
+                type="button"
+                className="nav-link nav-item sign-btn"
+                onClick={() => handleSignUpPopUp()}
+              >
+                Sign-Up
+              </button> */}
+              <button
+                id="login"
+                type="button"
+                className="nav-link nav-item sign-btn"
+                onClick={() => showUPPopUp()}
+              >
+                Login
+              </button>
+              <button
+                id="login"
+                type="button"
+                className="nav-link nav-item sign-btn"
+                onClick={() => showUSignUpPPopUp()}
+              >
+                Sing-Up
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* </div> */}
+
+        {/* {isLogin === false ? (
+          <>
+            <button
+              type="button"
+              id="login"
+              className="nav-item nav-link popup-css login-btn-btn"
+              onClick={() => setLogin(!login)}
+            >
+              Login
+            </button>
+            <button
+              id="login"
+              type="button"
+              className="nav-link nav-item sign-btn"
+              onClick={() => handleSignUpPopUp()}
+            >
+              Sign-Up
+            </button>
+          </>
+        ) : (
+          <button
+            type="button"
+            id="logout"
+            // style={{ display: "none" }}
+            className="nav-link nav-item sign-btn"
+            onClick={() => handleLogout()}
+          >
+            Logout
+          </button>
+        )} */}
+
+        <button
+          className="navbar-toggler hidee"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
+      <Popup open={up} closeOnDocumentClick onClose={closeUp}>
+        <div className="logbox">
+          {/* <div className="title">
+            <NavLink activeClassName="pageSwitcherItem-active" onClick={() => setPopupType("abc")}>Signup</NavLink>
+          </div>
+          <div className="title">
+            <NavLink activeClassName="pageSwitcherItem-active" onClick={() => setPopupType("xyz")}>Login</NavLink>
+          </div> */}
+
+          <Nav justify variant="tabs">
+            <Nav.Item className={PopupType === "abc" ? "active" : ""}>
+              <Nav.Link onClick={() => setPopupType("abc")}>Signup</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className={PopupType === "xyz" ? "active" : ""}>
+              <Nav.Link onClick={() => setPopupType("xyz")}>login</Nav.Link>
+            </Nav.Item>
+          </Nav>
+
+          {PopupType === "abc" && (
+            <>
+              <div className="spop">
+                <img src={regi} alt="" className="regiseter" />
+                <div className="pop-signup">
+                  <div className="form sign-form mt-3">
+                    <div className="form-group pt-1">
+                      <h6>Name</h6>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Name"
+                        onChange={(e) =>
+                          setUser1({ ...user1, full_name: e.target.value })
+                        }
+                        value={user1.full_name}
+                      />
+                    </div>
+                    <div className="form-group pt-2">
+                      <h6>E-mail</h6>
+                      <input
+                        type="email"
+                        name="email"
+                        className="form-control"
+                        placeholder="Email"
+                        onChange={(e) =>
+                          setUser1({ ...user1, email_id: e.target.value })
+                        }
+                        value={user1.email_id}
+                      />
+                    </div>
+                    <div className="form-group pt-2">
+                      <h6>Password</h6>
+                      <input
+                        type="password"
+                        className="form-control"
+                        placeholder="Password"
+                        maxLength={9}
+                        minLength={6}
+                        onChange={(e) =>
+                          setUser1({ ...user1, password: e.target.value })
+                        }
+                        value={user1.password}
+                      />
+                    </div>
+                    <div className="form-group pt-2">
+                      <h6>Confirm Password</h6>
+                      <input
+                        type="password"
+                        className="form-control"
+                        placeholder="Confirm Password"
+                        id="inputValidationEx2"
+                        maxLength={9}
+                        minLength={6}
+                        required
+                        onChange={(e) =>
+                          setUser1({
+                            ...user1,
+                            confirm_password: e.target.value,
+                          })
+                        }
+                        value={user1.confirm_password}
+                      />
+                    </div>
+
+                    <div className="form-check d-flex justify-content-start sign-termsC">
+                      <input type="checkbox" value="yes" id="accept" />
+                      <span> I agree all statements in </span>
+                      <Link to={"/"} className="text-decoration-none ">
+                        Terms of service
+                      </Link>
+                    </div>
+                    <button
+                      className="sign"
+                      id="signup"
+                      onClick={() => {
+                        check1();
+                      }}
+                    >
+                      Sign Up
+                    </button>
+                    {/* <div className="pt-2">
+            <p>Or join now with</p>
+          </div>
+          <div className="icons">
+            <Link>
+              <FaInstagramSquare size={50} />
+            </Link>
+            <Link>
+              <AiFillFacebook size={50} />
+            </Link>
+            <Link>
+              <FaGooglePlusSquare size={50} />
+            </Link>
+          </div> */}
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+          {PopupType === "xyz" && (
+            <div className="login">
+              <img src={logw} alt="" className="logw" />
+              <div className="form login-popup-dash">
+                <div className="form-group pt-2">
+                  <h6>E-mail</h6>
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email"
+                    required
+                    id="exampleFormControlInput1"
+                    name="email"
+                    // onChange={(e) =>
+                    //   setUser({ ...user, email: e.target.value })
+                    // }
+                    onChange={(e) =>
+                      setUser({ ...user, login_email_id: e.target.value })
+                    }
+                    value={user.login_email_id}
+                  />
+                </div>
+                <div className="form-group pt-2">
+                  <h6>Password</h6>
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Password"
+                    maxLength={9}
+                    minLength={6}
+                    required
+                    // onChange={(e) =>
+                    //   setUser({ ...user, password: e.target.value })
+                    // }
+
+                    onChange={(e) =>
+                      setUser({ ...user, login_password: e.target.value })
+                    }
+                    value={user.login_password}
+                  />
+                </div>
+                <button
+                  id="login"
+                  className="sign"
+                  onClick={() => check()}
+                >
+                  Log In
+                </button>
+                <div className="flex-button">
+                  <button
+                    type="button"
+                    onClick={() => showSignUpPopUp()}
+                    className="login-btn me-2"
+                  >
+                    Sign-Up
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setForgot(!forgot);
+                      setLogin(!login);
+                    }}
+                    className="forgot-btn-dash"
+                  >
+                    Forgot Password?
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </Popup>
+      <Popup open={forgot} closeOnDocumentClick onClose={closeforgot}>
+        <Forgotpage onSuccess={closeforgot} />
+      </Popup>
+    </>
+  );
+}
+export default NavBar;

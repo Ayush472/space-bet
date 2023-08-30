@@ -1,0 +1,180 @@
+
+      <Popup open={login} closeOnDocumentClick onClose={closeLogin}>
+        {/* Login page code  */}
+        <div className="logbox">
+          {/* <a className="close" onClick={closeLogin}>
+              &times;
+            </a> */}
+          <h4 className="text-center">Log In</h4>
+          <button onClick={() => showSignUpPopUp()}>signup</button>
+
+          {/* <p className="para">with</p> */}
+          {/* <div className="icons">
+                  <Link to={"/"}>
+                    <FaInstagramSquare size={50} />
+                  </Link>
+                  <Link to={"/"}>
+                    <AiFillFacebook size={50} />
+                  </Link>
+                  <Link to={"/"}>
+                    <FaGooglePlusSquare size={50} />
+                  </Link>
+                </div>
+                <p className="para">or</p> */}
+          <div className="form login-popup-dash">
+            <div className="form-group pt-2">
+              <h6>E-mail</h6>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Email"
+                required
+                id="exampleFormControlInput1"
+                name="email"
+                // onChange={(e) => setUser({ ...user, email: e.target.value })}
+                onChange={(e) =>
+                  setUser({ ...user, login_email_id: e.target.value })
+                }
+                value={user.login_email_id}
+              />
+            </div>
+            <div className="form-group pt-2">
+              <h6>Password</h6>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Password"
+                maxLength={9}
+                minLength={6}
+                required
+                // onChange={(e) => setUser({ ...user, password: e.target.value })}
+
+                onChange={(e) =>
+                  setUser({ ...user, login_password: e.target.value })
+                }
+                value={user.login_password}
+              />
+            </div>
+            <button id="login" className="sign" onClick={() => check()}>
+              Log In
+            </button>
+            <div className="flex-button">
+              <button
+                type="button"
+                onClick={() => showSignUpPopUp()}
+                className="login-btn me-2"
+              >
+                Sign-Up
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setForgot(!forgot);
+                  setLogin(!login);
+                }}
+                className="forgot-btn-dash"
+              >
+                Forgot Password?
+              </button>
+            </div>
+          </div>
+        </div>
+      </Popup>
+      <Popup open={signup} closeOnDocumentClick onClose={closeSignup}>
+        {/* <Signup onSuccess={() => showSignUpPopUp()} /> */}
+        <div className="needs-validation">
+          <div className="signup-box">
+            <h4 className="text-center">Sign Up</h4>
+            <button onClick={() => showSignUpPopUp()}>login</button>
+            <div className="form sign-form mt-3">
+              <div className="form-group pt-1">
+                <h6>Name</h6>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Name"
+                  // onChange={(e) =>
+                  //   setUser1({ ...user1, full_name: e.target.value })
+                  // }
+                  // value={user1.full_name}
+                />
+              </div>
+              <div className="form-group pt-2">
+                <h6>E-mail</h6>
+                <input
+                  type="email"
+                  name="email"
+                  className="form-control"
+                  placeholder="Email"
+                  // onChange={(e) =>
+                  //   setUser1({ ...user1, email_id: e.target.value })
+                  // }
+                  // value={user1.email_id}
+                />
+              </div>
+              <div className="form-group pt-2">
+                <h6>Password</h6>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Password"
+                  maxLength={9}
+                  minLength={6}
+                  // onChange={(e) =>
+                  //   setUser1({ ...user1, password: e.target.value })
+                  // }
+                  // value={user1.password}
+                />
+              </div>
+              <div className="form-group pt-2">
+                <h6>Confirm Password</h6>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Confirm Password"
+                  id="inputValidationEx2"
+                  maxLength={9}
+                  minLength={6}
+                  required
+                  // onChange={(e) =>
+                  //   setUser1({ ...user1, confirm_password: e.target.value })
+                  // }
+                  // value={user1.confirm_password}
+                />
+              </div>
+
+              <div className="form-check d-flex justify-content-start sign-termsC">
+                <input type="checkbox" value="yes" id="accept" />
+                <span> I agree all statements in </span>
+                <Link to={"/"} className="text-decoration-none ">
+                  Terms of service
+                </Link>
+              </div>
+              <button
+                className="sign"
+                id="signup"
+                  onClick={() => {
+                    check1();
+                  }}
+              >
+                Sign Up
+              </button>
+              {/* <div className="pt-2">
+            <p>Or join now with</p>
+          </div>
+          <div className="icons">
+            <Link>
+              <FaInstagramSquare size={50} />
+            </Link>
+            <Link>
+              <AiFillFacebook size={50} />
+            </Link>
+            <Link>
+              <FaGooglePlusSquare size={50} />
+            </Link>
+          </div> */}
+            </div>
+          </div>
+        </div>
+      </Popup>

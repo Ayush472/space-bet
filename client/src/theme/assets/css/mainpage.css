@@ -1,0 +1,129 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
+
+.row {
+  --bs-gutter-x: 0rem !important;
+}
+.fPage {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(to right,  #323b48,#212930);
+    
+
+  height: 100vh;
+  /* position: absolute; */
+     overflow: scroll;
+    top: 0;
+    bottom: 0;
+    left: 0; 
+    right: -22px; 
+}
+.fPage::-webkit-scrollbar{
+    display: none !important;
+  }
+.feature {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.game {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.gamein{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+h3 {
+  color: white;
+}
+h2 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* color: white; */
+}
+p {
+  color: white;
+}
+
+.card {
+  width: 13rem;
+  /* height: 8rem !important; */
+  font-size: medium;
+}
+.card-img-top {
+  height: auto;
+  width: 12rem !important;
+}
+.card-text:last-child {
+  font-size: x-small !important;
+}
+.card:hover {
+  box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+}
+
+
+
+/* .main-card {
+  width: 10rem;
+} */
+.main-card img {
+  height: 12rem;
+  cursor: pointer;
+  /* width: 11rem; */
+  border-radius: 10px;
+  padding: 2px;
+  /* background: linear-gradient(to top,  var(--greenYellow), var(--primary)); */
+  box-shadow: 0px 0px 6px 0px var(--greenYellow);
+  margin: 10px 10px 0px 10px ;
+}
+.main-card-details{
+  margin-left:10px ;
+}
+ .main-card-details h4 {
+  color: var(--white);
+  font-size: 14px;
+  margin-top: 8px !important;
+  margin-bottom: 0px;
+  font-family: system-ui;
+}
+.main-card-details p{
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-family: system-ui;
+  color: #9e9898;
+}
+.kaHnvc {
+  top: -31px !important;
+  right: 30px !important;
+  height: 34px !important;
+  width: 40px !important;
+  left: revert !important;
+  margin-right: 1rem !important;
+color: white;
+}
+.dFFQiB {
+  height: 34px !important;
+  right: 5px !important;
+  width: 40px !important;
+  top: -31px !important;
+color: white;
+
+} 
+.second-carousel img{
+    height: 9.8rem !important;
+    cursor: pointer;
+}
+
+ .header h4 b{
+  color: white;
+  margin-left: 10px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+.header h4{
+  margin-bottom: 2px;
+}
+
+.main-heghit-problem{
+  height: 20rem;
+} 

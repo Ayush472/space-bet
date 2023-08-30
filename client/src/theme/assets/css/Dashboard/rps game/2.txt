@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Barlow", sans-serif;
+}
+.rps {
+  width: 95vw;
+  height: 100vh;
+  background: radial-gradient(
+    134.34% 134.34% at 50% 0%,
+    #1f3757 0%,
+    #131537 100%);
+  
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#wrapper{
+  display: none;
+
+}
+.rocpepsic{
+  margin-top: 7rem;
+}
+  #rocpepsic{ 
+    display: block;
+
+  }
+
+.twobtnw{
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  margin-left: 40rem;
+}
+#twobtnw{
+  display: block;
+  visibility: visible;
+}
+/* CSS */
+
+/* CSS */
+.pvc {
+
+  border-radius: 30px;
+  padding: 5px;
+  border: 7px solid #de415d;
+  font-weight: 600;
+  line-height: 30px;
+  font-size: 24px;
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+
+
+}
+.pvc:hover{
+  box-shadow: rgb(255, 198, 0) ;
+
+}
+
+
+@media (min-width: 768px) {
+  .pvc {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+
+
+.pvc1{
+  border-radius: 30px;
+  padding: 5px;
+  border: 7px solid #eca61f;
+  font-weight: 600;
+  line-height: 30px;
+  font-size: 24px;
+  padding-top: 10px;
+  width: 16rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
