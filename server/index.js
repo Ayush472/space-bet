@@ -14,7 +14,7 @@ const port = process.env.PORT || 3001;
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://space-bet.onrender.com",
+    origin: "https://space-bet.onrender.com/",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
     credentials: true,
