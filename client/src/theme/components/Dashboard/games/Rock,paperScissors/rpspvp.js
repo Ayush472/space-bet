@@ -18,7 +18,7 @@ const Pvsp = () => {
   const [color, setColor] = useState(undefined);
   const [gameStatus, setGameStatus] = useState(false);
 
-  const port = "https://space-bet.onrender.com/";
+  const port = process.env.PORT || 3000;
 
   useEffect(() => {
     console.log("=player", players);
