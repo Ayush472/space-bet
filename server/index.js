@@ -9,7 +9,7 @@ const cors = require("cors");
 const { send } = require("process");
 const io = require("socket.io")(http, {
   cors: {
-    origin: "https://space-bet.onrender.com/",
+    origin: "https://space-bet.onrender.com",
   },
 });
 app.use(cors());
