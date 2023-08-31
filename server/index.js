@@ -7,6 +7,7 @@ const newId = nano("23456789ABCDEFGHJKLPQRSTUVXYZ", 4);
 const computeWinner = require("./game.js");
 
 const cors = require("cors");
+const { send } = require("process");
 
 app.use(cors());
 const port = process.env.PORT || 3001;
@@ -167,7 +168,9 @@ io.on("connection", (socket) => {
     }
   });
 });
-
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 server.listen(port, () => {
   console.log("SERVER IS RUNNING on ", port);
 });
