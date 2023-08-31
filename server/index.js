@@ -1,27 +1,31 @@
 const express = require("express");
 const app = express();
-const http = require("http");
-const Server = require("socket.io").Server;
 const nano = require("nanoid").customAlphabet;
 const newId = nano("23456789ABCDEFGHJKLPQRSTUVXYZ", 4);
 const computeWinner = require("./game.js");
-
+const PORT = 4000;
+const http = require("http").Server(app);
 const cors = require("cors");
 const { send } = require("process");
-
-app.use(cors());
-const port = process.env.PORT || 3001;
-
-const server = http.createServer(app);
-const io = new Server(server, {
+const io = require("socket.io")(http, {
   cors: {
     origin: "https://space-bet.onrender.com/",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
-    credentials: true,
   },
 });
+app.use(cors());
+// const port = process.env.PORT || 3001;
 
+// const server = http.createServer(app);
+// const io = new Server(server, {
+//   cors: {
+//     origin: "https://space-bet.onrender.com/",
+//     methods: ["GET", "POST"],
+//     allowedHeaders: ["Content-Type"],
+//     credentials: true,
+//   },
+// });
+
+// app.use(cors());
 const state = {};
 const rooms = {};
 
@@ -171,6 +175,6 @@ io.on("connection", (socket) => {
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
-server.listen(port, () => {
-  console.log("SERVER IS RUNNING on ", port);
+http.listen(PORT, () => {
+  console.log("SERVER IS RUNNING on ", PORT);
 });
