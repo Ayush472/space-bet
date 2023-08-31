@@ -169,5 +169,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(port, () => {
-  console.log("SERVER IS RUNNING");
+  console.log("SERVER IS RUNNING on ", port);
 });
