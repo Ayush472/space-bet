@@ -34,8 +34,8 @@ const Pvsp = () => {
         setTimeout(() => {
           setWinner(false);
           socket.emit("rps-reset");
-        }, port);
-      }, port);
+        }, 3000);
+      }, 3000);
     });
   }, []);
 
